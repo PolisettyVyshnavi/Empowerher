@@ -9,3 +9,12 @@ function prime(num){
     }
     return true
 }
+
+function evenodd(num){
+    if(num %2==0){
+        return true
+    }
+    else{
+        return false
+    }
+}
