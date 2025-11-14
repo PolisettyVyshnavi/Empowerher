@@ -1,11 +1,21 @@
-function signup(userName){
-        let users=["Basakar","Naveen","Nani","Sneha"];
-        if(users.includes(userName)){
-            return "User Already Registered, Please Login";
+function prime(num){
+    if (num<=1){
+        return false
+    }
+    for(let i=2;i<=Math.surt(num);i++){
+        if(num % i==0){
+            return false
         }
-        else {
-            users.push(userName)
-                return "Signup Successful, please Login"
-            }
-        }
-        console.log(signup("Nani"))
+    }
+    return true
+}
+
+function evenodd(num){
+    if(num %2==0){
+        return true
+    }
+    else{
+        return false
+    }
+}
+module.exports={prime, evenodd}
