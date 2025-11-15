@@ -1,0 +1,25 @@
+div{
+    color:blue;
+    text-align: center;
+}
+h1{
+    color: blue;
+}
+button{
+    background-color: red;
+    color: white;
+    text-align: right;
+}
+.section{
+    margin-left: 30px;
+    margin-top: 40px;
+}
+.order{
+    margin: 20px;
+    display: grid;
+    grid-template-rows: repeat(3,1ftr);
+    gap:25px;
+}
+.card{
+
+}
