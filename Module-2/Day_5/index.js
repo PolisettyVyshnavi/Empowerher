@@ -18,3 +18,4 @@ function evenodd(num){
         return false
     }
 }
+module.exports={prime,evenodd}

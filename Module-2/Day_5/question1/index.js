@@ -2,7 +2,7 @@ function prime(num){
     if (num<=1){
         return false
     }
-    for(let i=2;i<=Math.surt(num);i++){
+    for(let i=2;i<=Math.sqrt(num);i++){
         if(num % i==0){
             return false
         }
@@ -10,3 +10,12 @@ function prime(num){
     return true
 }
 
+function evenodd(num){
+    if(num %2==0){
+        return true
+    }
+    else{
+        return false
+    }
+}
+module.exports={prime, evenodd}
