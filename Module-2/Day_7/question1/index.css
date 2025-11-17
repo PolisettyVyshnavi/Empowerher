@@ -1,0 +1,40 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2%;
+    padding: 2em;
+    color: white;
+    grid-template-rows: 100px 100px 100px 100px;
+}
+.container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.num1{
+    background: red;
+}
+.num2{
+    background: rgb(80, 80, 179);
+}
+.num3{
+    background: yellow;
+}
+.num4{
+    background: violet;
+}
+.num5{
+    background: lightgreen;
+}
+.num6{
+    background: skyblue;
+}
+.num7{
+    background: rgb(252, 134, 91);
+}
+.num8{
+    background: rgb(98, 245, 252);
+}
+.num9{
+    background: brown;
+}
