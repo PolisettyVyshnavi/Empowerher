@@ -1,0 +1,102 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+}
+h1{
+    color: blue;
+}
+div,p{
+    color: blue;
+    display: inline-block;
+    margin: 0 1rem;
+}
+nav button{
+    background-color: red;
+    color: white;
+    padding: 1%;
+}
+.order{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap: 1.5rem;
+   padding: 1rem;
+   background: white;
+}
+.order div{
+    background: red;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+.order img{
+    height: 100px;
+    width: 100px;
+}
+.order p{
+    color: white;
+}
+.order button{
+    background-color: white;
+    color: red;
+}
+.explore{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    background: white;
+}
+.explore div{
+    color: black;
+    text-align: center;
+    background: white;
+}
+.explore img{
+    height: 70px;
+    width: 50px;
+}
+.explore p{
+    color: black;
+}
+.explore div div{
+    color: red;
+}
+.bottom{
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    padding: 50px;
+    align-items: center;
+}
+.left{
+    display: flex;
+    gap: 20px;
+}
+.left img{
+    width: 300px;
+}
+.right{
+    margin-left: 50px;
+}
+.right h1{
+    margin-bottom: 10px;
+    color: black;
+    
+}
+.right p{
+    text-align: left;
+    color: black;
+}
+.logo{
+    display: flex;
+    gap:20px;
+}
+.bottom-btn{
+    width: 250px;
+    cursor: pointer;
+}
