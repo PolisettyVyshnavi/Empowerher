@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <style>
+            /* Base styles */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Large screens */
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Card styles */
+.box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+/* Profile image */
+.box img:first-of-type {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Name and title */
+.box h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 5px 0;
+}
+
+.box p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Company logo */
+.logo {
+  width: 80px;
+  height: auto;
+  margin-top: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr); /* Medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* Small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr; /* Extra small screens */
+  }
+}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">
+                <img src="https://cdn.masaischool.com/masai-website/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="">
+                <h3>Vijay Shekhar Sharma</h3>
+                <p>Founder & CEO</p>
+                <img src="https://th.bing.com/th/id/OIP._YgtL4UX1xhQQzNYiRGvCAHaEr?w=261&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="" class="logo">
+            </div>
+            <div class="box">
+                <img src="https://cdn.masaischool.com/masai-website/Rectangle_427_637d69bb57.png" alt="">
+                <h3>Kunal Shah</h3>
+                <p>Founder</p>
+                <img src="https://vectorseek.com/wp-content/uploads/2023/05/CRED-Logo-Vector-730x730.jpg" alt="" class="logo">
+            </div>
+            <div class="box">
+                <img src="https://cdn.masaischool.com/masai-website/amrish_rau_pine_labs_144e5e587c.jpg" alt="">
+                <h3>Amrish Rau</h3>
+                <p>CEO</p>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.5AQdZGyJkjNUBzu5cHG3kQHaEK?pid=ImgDet&w=192&h=108&c=7&dpr=1.4&o=7&rm=3" alt="" class="logo">
+            </div>
+            <div class="box">
+                <img src="https://cdn.masaischool.com/masai-website/Sampad_swain_Instamojo_f12bf6341e.jpg" alt="">
+                <h3>Sampad Swain</h3>
+                <p>Co-Founder & CEO</p>
+                <img src="https://th.bing.com/th/id/OIP.j3SmNWU3VsO27_rXXK_WVAHaCB?w=350&h=95&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="" class="logo">
+            </div>
+            <div class="box">
+                <img src="https://cdn.masaischool.com/masai-website/Ankush_Sachdeva_Sharechat_4e44dbbe6b.jpg" alt="">
+                <h3>Ankush Sachdeva</h3>
+                <p>Co-Founder & CEO</p>
+                <img src="https://th.bing.com/th/id/OIP.4U7Ac8Tg03Uy8VDLcCkz7QHaE8?w=260&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="" class="logo">
+            </div>
+            <div class="box">
+                <img src="https://cdn.masaischool.com/masai-website/bhanu_pratap_singh_sharechat_11fdd7b47a.jpg" alt="">
+                <h3>Bhanu Pratap Singh</h3>
+                <p>Co-Founder & CTO</p>
+                <img src="https://th.bing.com/th/id/OIP.4U7Ac8Tg03Uy8VDLcCkz7QHaE8?w=260&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="" class="logo">
+            </div>
+            <div class="box">
+                <img src="https://cdn.masaischool.com/masai-website/farid_ahsan_sharechat_1251f28141.png" alt="">
+                <h3>Farid Ahsan</h3>
+                <p>Co-Founder & COO</p>
+                <img src="https://th.bing.com/th/id/OIP.4U7Ac8Tg03Uy8VDLcCkz7QHaE8?w=260&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" alt="" class="logo">
+            </div>
+            <div class="box">
+                <img src="https://cdn.masaischool.com/masai-website/Amit_Kumar_Agarwal_Nobroker_a8a279ad91.jpg" alt="">
+                <h3>Amit Kumar Agarwal</h3>
+                <p>Founder & CEO</p>
+                <img src="https://tse2.mm.bing.net/th/id/OIP.t4OAmJFJswh3MA7OwaVdhwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3" alt="" class="logo">
+            </div>
+        </div>
+    </body>
+</html>
