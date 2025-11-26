@@ -1,0 +1,3 @@
+console.log("Begin"); setTimeout(() => { console.log("Timeout Task"); }, 0); Promise.resolve().then(() => { console.log("Promise Task"); }); console.log("End");
+//console.log("Begin") and console.log("End") it follows synchronous so it executes first and tha callback from promise.resolve().then(...) is queued in microtask 
+// and settimeout callback goes to the microtask it delay with 0ms. So the output should be return like begin->end->Promise Task->Timeout Task
