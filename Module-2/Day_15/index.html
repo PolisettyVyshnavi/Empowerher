@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <h1 id="classhead">Welcome to Masai School</h1>
+        <p>This is first para</p>
+        <p>This is second para</p>
+        <p>This is third para</p>
+        <div class="container">
+            <p>This is division</p>
+        </div>
+        <script>
+            const head=document.getElementById("classhead");
+            head.textContent="Welcome to the DOM World!";
+            const para=document.getElementsByTagName("p");
+            for (let i=0;i<para.length;i++){
+                para[i].style.color="blue";
+            }
+            const division=document.querySelector(".container");
+            division.style.backgroundColor="yellow";
+        </script>
+    </body>
+</html>
