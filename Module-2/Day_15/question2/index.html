@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+            .odd{
+                font-weight: bold;
+                color: blue;
+            }
+            .even{
+                font-style: italic;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="mylist">
+            <li class="odd">Item1</li>
+            <li class="even">Item2</li>
+            <li class="odd">Item3</li>
+        </ul>
+        <button id="addbtn">Add Item</button>
+        <script>
+            const list=document.querySelector("#mylist");
+            const button=document.querySelector("#addbtn");
+            button.addEventListener('click',()=>{
+                const newItem=document.createElement('li');
+                newItem.textContent="New Item";
+
+                const itemCount=list.children.length+1;
+
+                if(itemCount %2===1){
+                    newItem.classList.add('odd');
+                }
+                else{
+                    newItem.classList.add('even');
+                }
+                list.appendChild(newItem)
+            });
+        </script>
+    </body>
+</html>
+
