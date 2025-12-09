@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Book Management App</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar for adding books -->
+    <aside class="sidebar">
+        <h2>Add Book</h2>
+        <form id="addBookForm">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="author" placeholder="Author" required>
+            <input type="number" id="price" placeholder="Price" required>
+            <input type="text" id="imageURL" placeholder="Image URL" required>
+            <button type="submit">Add Book</button>
+        </form>
+    </aside>
+
+    <!-- Main book display -->
+    <main>
+        <h1>Book List</h1>
+        <div id="bookList" class="book-grid"></div>
+    </main>
+
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <img id="modalImage" width="200">
+    <p><b>Author:</b> <span id="modalAuthor"></span></p>
+    <p><b>Price:</b> ₹<span id="modalPrice"></span></p>
+  </div>
+</div>
+
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
