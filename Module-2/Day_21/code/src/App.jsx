@@ -1,5 +1,5 @@
-import Mycomponent from "./assets/Mycomponent";
+import FirstComponent from "./assets/FirstComponent";
 function App() {
-  return (<Mycomponent/>);
+  return (<FirstComponent/>);
 }
 export default App;
