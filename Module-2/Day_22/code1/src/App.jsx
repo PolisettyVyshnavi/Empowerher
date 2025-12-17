@@ -1,15 +1,13 @@
 import React from "react";
-import Toapp from "./Toapp";
+import Calculator from "./Calculator";
 
 function App() {
-  // return (
-  //   <div>
-  //     <StyleComponent />
-  //   </div>
-  // );
-  // return (<Card></Card>)
-  // return (<List></List>)
-  return(<Toapp></Toapp>)
+  return (
+    <div>
+      <h1>My Calculator App</h1>
+      <Calculator />
+    </div>
+  );
 }
 
 export default App;
