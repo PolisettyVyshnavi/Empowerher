@@ -1,15 +1,12 @@
 import React from "react";
-import Toapp from "./Toapp";
+import UserProfile from "./components/UserProfile";
 
 function App() {
-  // return (
-  //   <div>
-  //     <StyleComponent />
-  //   </div>
-  // );
-  // return (<Card></Card>)
-  // return (<List></List>)
-  return(<Toapp></Toapp>)
+  return (
+    <div>
+      <UserProfile />
+    </div>
+  );
 }
 
 export default App;
