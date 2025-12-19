@@ -1,0 +1,11 @@
+Component Lifecycle in React Functional Components
+In React functional components, lifecycle behavior is handled using the useEffect hook:
+- Mount Phase :
+When the component first loads, useEffect(() => {...}, []) runs once.
+Example: fetching data, setting up subscriptions, or initializing values.
+- Update Phase :
+When state or props change, useEffect(() => {...}, [dependencies]) runs again.
+Example: reacting to changes in count, updating the DOM, or recalculating values.
+- Unmount Phase :
+When the component is removed from the DOM, React runs the cleanup function inside useEffect.
+Example: useEffect(() => { return () => {...}; }, []) cleans up subscriptions, timers, or event listeners.
