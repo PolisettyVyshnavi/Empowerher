@@ -1,11 +1,11 @@
 import React from "react";
-import UserData from "./UserData";
+import ColorToggle from "./ColorToggle"; // adjust path if needed
 
 function App() {
   return (
     <div>
-      <h1>Welcome to My App</h1>
-      <UserData />
+      <h1>Conditional Styling Demo</h1>
+      <ColorToggle />
     </div>
   );
 }

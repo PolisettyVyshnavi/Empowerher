@@ -1,0 +1,15 @@
+.redDiv {
+  background-color: red;
+  color: white;
+  padding: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.blueDiv {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
