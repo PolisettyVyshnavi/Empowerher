@@ -1,32 +1,13 @@
-import { BrowserRouter,Routes,Route } from "react-router-dom";
-import Home from "./Home";
-import Login from "./Login";
-import Dashboard from "./Dashboard";
-import ProtectRoute from "./ProtectRoute";
-import {Link} from "react-router-dom"
-function App(){
+import React from "react";
+import Counter from "./Counter";
 
-    return (
-        <BrowserRouter>
-        <nav>
-            <li>
-                <Link to="/">Home</Link>
-                <Link to="/login">Login</Link>
-                <Link to="/dashboard">Dashboard</Link>
-
-            </li>
-        </nav>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/dashboard" element={
-                    <ProtectRoute>
-                        <Dashboard/>
-                        </ProtectRoute>
-                    }
-                />
-            </Routes>
-        </BrowserRouter>
-    )
+function App() {
+  return (
+    <div>
+      <h1>Counter Application</h1>
+      <Counter />
+    </div>
+  );
 }
+
 export default App;
