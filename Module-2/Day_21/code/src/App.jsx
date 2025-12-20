@@ -1,4 +1,5 @@
-import FirstComponent from "./assets/FirstComponent";
+import React from "react";
+import FirstComponent from "./FirstComponent";
 function App() {
   return (<FirstComponent/>);
 }
