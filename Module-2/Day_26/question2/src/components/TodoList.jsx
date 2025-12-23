@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
 import TodoItem from "./TodoItem";
-
 function TodoList() {
   const { todos } = useContext(TodoContext);
-
-  return (
+    return (
     <div>
       {todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
@@ -13,5 +11,4 @@ function TodoList() {
     </div>
   );
 }
-
 export default TodoList;
