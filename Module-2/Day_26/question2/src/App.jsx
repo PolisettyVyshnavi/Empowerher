@@ -1,11 +1,10 @@
 import React from "react";
-import Component1 from "./components/Component1";
+import Todos from "./components/Todos";
 
 function App() {
   return (
     <div>
-      <h2>Context API Demo</h2>
-      <Component1 />
+      <Todos />
     </div>
   );
 }
