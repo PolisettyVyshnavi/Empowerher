@@ -15,7 +15,7 @@ function Todos() {
         {todos.map((todo) => (
           <div key={todo.id} className="todo-card">
             <h4>{todo.title}</h4>
-            <p>Status: {todo.completed ? "Completed ✅" : "Not Completed ❌"}</p>
+            <p>Status: {todo.completed ? "Completed" : "Not Completed"}</p>
           </div>
         ))}
       </div>
