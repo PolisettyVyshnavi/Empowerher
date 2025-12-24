@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Todos.css";
-
 function Todos() {
   const [todos, setTodos] = useState([]);
 
@@ -9,7 +8,6 @@ function Todos() {
       .then((res) => res.json())
       .then((data) => setTodos(data.slice(0, 10))); // first 10 todos
   }, []);
-
   return (
     <div>
       <h2>Todos</h2>

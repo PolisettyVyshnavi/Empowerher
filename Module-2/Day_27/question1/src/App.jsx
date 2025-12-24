@@ -5,7 +5,6 @@ import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
 import Todos from "./components/Todos";
 import NotFound from "./components/NotFound";
-
 function App() {
   return (
     <div>
