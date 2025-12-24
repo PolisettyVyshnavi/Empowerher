@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import AboutUs from "./components/About";
+import AboutUs from "./components/AboutUs";
 import Todos from "./components/Todos";
 import NotFound from "./components/NotFound";
 
