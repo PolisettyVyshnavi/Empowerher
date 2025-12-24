@@ -6,7 +6,7 @@ function Todos() {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")
       .then((res) => res.json())
-      .then((data) => setTodos(data.slice(0, 10))); // first 10 todos
+      .then((data) => setTodos(data.slice(0, 10))); 
   }, []);
   return (
     <div>
