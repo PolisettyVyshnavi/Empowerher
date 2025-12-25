@@ -1,19 +1,14 @@
-// pages/TodoDetails.js
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
 const TodoDetails = () => {
   const { todoId } = useParams();
   const [todo, setTodo] = useState(null);
-
-  useEffect(() => {
+useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${todoId}`)
       .then(res => res.json())
       .then(data => setTodo(data));
   }, [todoId]);
-
   if (!todo) return <p>Loading...</p>;
-
   return (
     <div>
       <h2>Todo Details</h2>
