@@ -1,11 +1,9 @@
-// App.js
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Todos from './pages/Todos';
 import TodoDetails from './pages/TodoDetails';
 import ProtectedRoute from './components/ProtectedRoute';
-
 const App = () => (
   <Routes>
     <Route path="/" element={<Home />} />
