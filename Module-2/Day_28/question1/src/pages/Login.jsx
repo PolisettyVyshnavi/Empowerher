@@ -1,4 +1,3 @@
-// pages/Login.js
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,7 +6,6 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-
   const handleLogin = () => {
     if (email === 'admin@gmail.com' && password === 'admin@123') {
       localStorage.setItem('isLoggedIn', 'true');
@@ -16,7 +14,6 @@ const Login = () => {
       setError('Invalid email or password');
     }
   };
-
   return (
     <div>
       <h2>Login</h2>
