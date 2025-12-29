@@ -1,11 +1,8 @@
-// RegistrationForm.js
 import React, { useReducer } from 'react';
 import { reducer, initialState } from './reducer';
-
 const RegistrationForm = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { step, formData, isSubmitted, errors } = state;
-
   const validateStep = () => {
     const newErrors = {};
     if (step === 1) {
@@ -19,15 +16,11 @@ const RegistrationForm = () => {
     dispatch({ type: 'SET_ERRORS', errors: newErrors });
     return Object.keys(newErrors).length === 0;
   };
-
   const handleNext = () => {
     if (validateStep()) dispatch({ type: 'NEXT_STEP' });
   };
-
   const handlePrevious = () => dispatch({ type: 'PREVIOUS_STEP' });
-
   const handleSubmit = () => dispatch({ type: 'SUBMIT_FORM' });
-
   const handleChange = (e) => {
     dispatch({
       type: 'UPDATE_FIELD',
@@ -35,7 +28,6 @@ const RegistrationForm = () => {
       value: e.target.value
     });
   };
-
   const renderStep = () => {
     switch (step) {
       case 1:
@@ -74,7 +66,6 @@ const RegistrationForm = () => {
         return <h2>Unknown Step</h2>;
     }
   };
-
   return (
     <div>
       <h1>Multi-Step Registration</h1>
@@ -90,5 +81,4 @@ const RegistrationForm = () => {
     </div>
   );
 };
-
 export default RegistrationForm;
