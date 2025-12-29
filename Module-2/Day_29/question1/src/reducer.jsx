@@ -1,4 +1,3 @@
-// reducer.js
 export const initialState = {
   step: 1,
   isSubmitted: false,
@@ -10,7 +9,6 @@ export const initialState = {
   },
   errors: {}
 };
-
 export const reducer = (state, action) => {
   switch (action.type) {
     case 'UPDATE_FIELD':
