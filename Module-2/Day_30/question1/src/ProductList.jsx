@@ -1,5 +1,4 @@
 import React from 'react';
-
 function ProductList({ products, onSelectProduct }) {
   console.log('ProductList rendered');
   return (
