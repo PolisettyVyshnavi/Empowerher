@@ -1,10 +1,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import ProductList from './ProductList';
-
 function App() {
   const [counter, setCounter] = useState(0);
-
-  // ✅ Simulate large product list
   const products = useMemo(() => {
     return Array.from({ length: 10000 }, (_, i) => ({
       id: i,
@@ -12,18 +9,13 @@ function App() {
       price: Math.floor(Math.random() * 100),
     }));
   }, []);
-
-  // ✅ Memoize total price to avoid recalculation
   const totalPrice = useMemo(() => {
     console.log('Calculating total price...');
     return products.reduce((sum, p) => sum + p.price, 0);
   }, [products]);
-
-  // ✅ Memoize product selection handler
   const handleSelectProduct = useCallback((product) => {
     console.log('Selected:', product.name);
   }, []);
-
   return (
     <div>
       <h1>React Performance Optimization</h1>
@@ -35,5 +27,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
