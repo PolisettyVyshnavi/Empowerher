@@ -11,5 +11,4 @@ function ProductList({ products, onSelectProduct }) {
     </ul>
   );
 }
-
 export default ProductList;
