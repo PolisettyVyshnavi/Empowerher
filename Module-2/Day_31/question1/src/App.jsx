@@ -1,8 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
-
-// ✅ Lazy load the heavy component
 const HeavyComponent = lazy(() => import('./HeavyComponent'));
-
 function App() {
   const [counter, setCounter] = useState(0);
 
