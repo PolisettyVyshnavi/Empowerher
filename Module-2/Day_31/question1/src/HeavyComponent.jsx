@@ -1,10 +1,6 @@
 import React from 'react';
-
-// ✅ Memoize the heavy component
 const HeavyComponent = React.memo(() => {
   console.log('HeavyComponent rendered');
-
-  // Simulate heavy UI
   const items = Array.from({ length: 1000 }, (_, i) => `Item ${i + 1}`);
 
   return (
