@@ -13,5 +13,4 @@ const HeavyComponent = React.memo(() => {
     </div>
   );
 });
-
 export default HeavyComponent;
