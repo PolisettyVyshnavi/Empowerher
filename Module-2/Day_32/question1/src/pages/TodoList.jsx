@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getTodos } from '../api/todoService';
-
 function TodoList() {
   const [todos, setTodos] = useState([]);
-
   useEffect(() => {
     getTodos().then(setTodos);
   }, []);
-
   return (
     <div>
       <h2>Todo List</h2>
@@ -24,5 +21,4 @@ function TodoList() {
     </div>
   );
 }
-
 export default TodoList;
