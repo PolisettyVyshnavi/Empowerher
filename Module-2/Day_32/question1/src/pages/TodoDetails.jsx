@@ -13,7 +13,7 @@ function TodoDetails() {
       <h2>Todo Details</h2>
       <p><strong>ID:</strong> {todo.id}</p>
       <p><strong>Title:</strong> {todo.title}</p>
-      <p><strong>Status:</strong> {todo.completed ? '✅ Completed' : '❌ Pending'}</p>
+      <p><strong>Status:</strong> {todo.completed ? ' Completed' : ' Pending'}</p>
     </div>
   );
 }
