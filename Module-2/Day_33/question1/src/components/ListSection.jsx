@@ -1,5 +1,4 @@
 import React from "react";
-
 const ListSection = () => {
   return (
     <section className="p-4">
@@ -11,5 +10,4 @@ const ListSection = () => {
     </section>
   );
 };
-
 export default ListSection;

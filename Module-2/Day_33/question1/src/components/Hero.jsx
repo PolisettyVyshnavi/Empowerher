@@ -1,5 +1,4 @@
 import React from "react";
-
 const Hero = () => {
   return (
     <section className="text-center p-8">
@@ -13,5 +12,4 @@ const Hero = () => {
     </section>
   );
 };
-
 export default Hero;
