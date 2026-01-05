@@ -1,5 +1,4 @@
 import React from "react";
-
 const TableSection = () => {
   return (
     <section className="p-4">
@@ -37,5 +36,4 @@ const TableSection = () => {
     </section>
   );
 };
-
 export default TableSection;

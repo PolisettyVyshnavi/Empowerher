@@ -1,5 +1,4 @@
 import React from "react";
-
 const Navbar = () => {
   return (
     <nav className="flex flex-col md:flex-row md:space-x-6 p-4 bg-white shadow">
@@ -9,5 +8,4 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;
