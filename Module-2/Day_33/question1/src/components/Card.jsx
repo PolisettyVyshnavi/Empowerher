@@ -1,5 +1,4 @@
 import React from "react";
-
 const Card = ({ title, desc }) => {
   return (
     <div className="bg-white p-4 shadow rounded">

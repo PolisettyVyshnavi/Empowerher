@@ -1,5 +1,4 @@
 import React from "react";
-
 const ContactForm = () => {
   return (
     <section className="p-4">

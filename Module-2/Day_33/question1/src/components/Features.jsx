@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./Card";
-
 const Features = () => {
   const features = [
     { title: "Feature 1", desc: "Description of feature one." },
