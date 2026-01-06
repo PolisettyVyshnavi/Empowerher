@@ -3,20 +3,16 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { useState } from "react";
-
 export default function FeedbackForm() {
   const [form, setForm] = useState({ name: "", email: "", feedback: "" });
   const [submitted, setSubmitted] = useState(null);
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = () => {
     setSubmitted(form);
     setForm({ name: "", email: "", feedback: "" });
   };
-
   return (
     <Card className="max-w-md mx-auto mt-10">
       <CardHeader>Feedback Form</CardHeader>
