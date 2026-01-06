@@ -1,11 +1,11 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "./ui/card";
+import { Button } from "./ui/button";
 import { useState } from "react";
 
 const images = [
-  "https://via.placeholder.com/300x200?text=Image+1",
-  "https://via.placeholder.com/300x200?text=Image+2",
-  "https://via.placeholder.com/300x200?text=Image+3",
+  "https://wallpapers.com/images/hd/pawan-kalyan-red-and-black-v78r04hfwy78pv9o.jpg",
+  "https://tse2.mm.bing.net/th/id/OIP.UZj9CIvsUPepaOrixvxSqQHaHq?rs=1&pid=ImgDetMain&o=7&rm=3",
+  "https://blogtobollywood.com/wp-content/uploads/2017/05/Prabhas-4.jpg",
 ];
 
 export default function ImageSlider() {

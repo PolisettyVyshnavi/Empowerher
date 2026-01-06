@@ -1,6 +1,6 @@
 import React from "react";
 import FeedbackForm from "./components/FeedbackForm.jsx";
-import ImageSlider from "./components/ImageSlideshow.jsx";
+import ImageSlideshow from "./components/ImageSlideshow.jsx";
 import TodoList from "./components/TodoList.jsx";
 
 function App() {
