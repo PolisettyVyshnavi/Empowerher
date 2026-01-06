@@ -3,25 +3,21 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
 import { useState } from "react";
-
 export default function TodoList() {
   const [task, setTask] = useState("");
   const [todos, setTodos] = useState([]);
-
   const addTodo = () => {
     if (task.trim()) {
       setTodos([...todos, { text: task, done: false }]);
       setTask("");
     }
   };
-
   const toggleDone = (i) => {
     const updated = [...todos];
     updated[i].done = !updated[i].done;
     setTodos(updated);
   };
-
-  return (
+ return (
     <Card className="max-w-md mx-auto mt-10">
       <CardHeader>Todo List</CardHeader>
       <CardContent className="space-y-4">
