@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardContent, CardFooter } from "./ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Button } from "./ui/button";
 import { useState } from "react";
 
 export default function FeedbackForm() {
