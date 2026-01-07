@@ -3,6 +3,4 @@ const Footer = () => (
 © 2026 Todos App
 </footer>
 );
-
-
 export default Footer;
