@@ -3,8 +3,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Todos from "./pages/Todos";
 import ProtectedRoute from "./routes/ProtectedRoute";
-
-
 function App() {
 return (
 <BrowserRouter>
@@ -20,6 +18,4 @@ return (
 </BrowserRouter>
 );
 }
-
-
 export default App;
