@@ -1,12 +1,8 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
-
 const TodoModal = ({ open, setOpen, title, onSave }) => {
 const [value, setValue] = useState(title);
-
-
 return (
 <Dialog open={open} onOpenChange={setOpen}>
 <DialogContent>
@@ -19,6 +15,4 @@ return (
 </Dialog>
 );
 };
-
-
 export default TodoModal;
