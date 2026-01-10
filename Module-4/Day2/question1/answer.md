@@ -52,7 +52,8 @@ Manage cross-platform abstractions for file system and networking functions.
 - Encryption and compression jobs.
 
 
-## Threads for Workers## Worker threads: what are they?
+## Threads for Workers
+## Worker threads: what are they?
 - JavaScript can be executed in parallel threads thanks to a Node.js module.
 - Worker threads have the ability to run JavaScript code directly, in contrast to the libuv thread pool.
 
