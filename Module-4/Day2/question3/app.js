@@ -17,7 +17,7 @@ async function fileOperations() {
     console.log("Content of data.txt:", data);
 
     await fs.appendFile('data.txt', '\nThis is second line');
-    console.log(" Appended to data.txt");
+    console.log("Appended to data.txt");
 
     await fs.unlink('Readme.md');
     console.log("Readme.md deleted");
