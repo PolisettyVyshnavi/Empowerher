@@ -39,19 +39,23 @@ Difference between npm init and npm init -y
 - npm init -y: Skips questions and creates a package.json file with default values.
 
 d. Files and Folders Created After Project Initialization
+
 package.json
 - Contains metadata about the project.
 - Lists dependencies and scripts.
 - Acts as the blueprint of the project.
+
 node_modules
 - Directory where all installed packages are stored.
 - Contains actual code of dependencies.
+
 package-lock.json
 - Records exact versions of installed packages.
 - Ensures consistency across different environments.
 
 Which files/folders should not be pushed to GitHub and why?
 - node_modules: It is large and can be regenerated using package.json. Pushing it wastes space and slows down repositories.
+
 Which files must be committed and why?
 - package.json: Defines project dependencies and scripts.
 - package-lock.json: Ensures exact dependency versions are installed.
