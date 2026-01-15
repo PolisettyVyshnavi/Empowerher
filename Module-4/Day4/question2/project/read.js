@@ -1,4 +1,3 @@
-// read.js
 import fs from 'fs/promises';
 
 export async function readFileContent() {
