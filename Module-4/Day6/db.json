@@ -1,4 +1,28 @@
 {
-  "users": [],
-  "todos": []
+  "users": [
+    {
+      "id": 1716100000000,
+      "name": "Rahul Sharma",
+      "email": "rahul.sharma@gmail.com"
+    },
+    {
+      "id": 1716100001000,
+      "name": "Anjali Verma",
+      "email": "anjali.verma@gmail.com"
+    }
+  ],
+  "todos": [
+    [
+  {
+    "id": 1716101234567,
+    "title": "Complete Express assignment",
+    "completed": false
+  },
+  {
+    "id": 1716102234567,
+    "title": "Practice CRUD operations",
+    "completed": false
+  }
+]
+  ]
 }
