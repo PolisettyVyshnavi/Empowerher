@@ -3,11 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 
 const router = express.Router();
-
-// ✅ Correct DB path (db.json is inside src)
 const DB_FILE = path.join(process.cwd(), "db.json");
-
-// ---------- Helper functions ----------
 const readDB = async () => {
   const data = await fs.readFile(DB_FILE, "utf-8");
   return JSON.parse(data);
@@ -16,8 +12,6 @@ const readDB = async () => {
 const writeDB = async (data) => {
   await fs.writeFile(DB_FILE, JSON.stringify(data, null, 2));
 };
-
-// ---------- GET all users ----------
 router.get("/", async (req, res) => {
   try {
     const db = await readDB();
@@ -26,8 +20,6 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-// ---------- GET single user ----------
 router.get("/:userId", async (req, res) => {
   try {
     const userId = Number(req.params.userId);
@@ -43,8 +35,6 @@ router.get("/:userId", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-// ---------- ADD user ----------
 router.post("/add", async (req, res) => {
   try {
     const { name, email } = req.body;
@@ -73,7 +63,6 @@ router.post("/add", async (req, res) => {
   }
 });
 
-// ---------- UPDATE user ----------
 router.put("/update/:userId", async (req, res) => {
   try {
     const userId = Number(req.params.userId);
@@ -98,8 +87,6 @@ router.put("/update/:userId", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-// ---------- DELETE user ----------
 router.delete("/delete/:userId", async (req, res) => {
   try {
     const userId = Number(req.params.userId);
