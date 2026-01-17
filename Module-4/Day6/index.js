@@ -7,7 +7,7 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// Routes
+// ✅ mount routers
 app.use("/users", usersRouter);
 app.use("/todos", todosRouter);
 
