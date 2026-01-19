@@ -6,6 +6,5 @@ export default function validateTodo(req, res, next) {
       error: "Invalid request body. Only 'title' is allowed",
     });
   }
-
   next();
 }
