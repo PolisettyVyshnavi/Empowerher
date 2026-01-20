@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Vyshnavi",
+      "email": "vysh@example.com",
+      "profilePic": "https://res.cloudinary.com/df2xy9vzy/image/upload/v1768919971/masai-users/hnmjm8hrecc5tjejqsan.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Vyshnavi",
+      "email": "vyshu@example.com",
+      "profilePic": "https://res.cloudinary.com/df2xy9vzy/image/upload/v1768920087/masai-users/guuus6rqn8unscrsycvi.jpg"
+    }
+  ]
+}
