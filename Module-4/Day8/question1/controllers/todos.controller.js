@@ -15,7 +15,6 @@ export function fetchTodos(req, res) {
     res.status(500).json({ error: "Failed to fetch todos" });
   }
 }
-
 export function fetchTodoById(req, res) {
   try {
     const id = parseInt(req.params.todoId);
@@ -26,7 +25,6 @@ export function fetchTodoById(req, res) {
     res.status(500).json({ error: "Failed to fetch todo" });
   }
 }
-
 export function createTodo(req, res) {
   try {
     const { title } = req.body;
@@ -37,14 +35,12 @@ export function createTodo(req, res) {
       id: todos.length ? todos[todos.length - 1].id + 1 : 1,
       title
     };
-
     addTodo(newTodo);
     res.status(201).json({ message: "Todo created", todo: newTodo });
   } catch (err) {
     res.status(500).json({ error: "Failed to create todo" });
   }
 }
-
 export function editTodo(req, res) {
   try {
     const id = parseInt(req.params.todoId);
@@ -55,7 +51,6 @@ export function editTodo(req, res) {
     res.status(500).json({ error: "Failed to update todo" });
   }
 }
-
 export function removeTodo(req, res) {
   try {
     const id = parseInt(req.params.todoId);
