@@ -1,0 +1,104 @@
+CREATE TABLE students1 (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT UNIQUE NOT NULL,
+  age INTEGER,
+  course TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO students1 (name, email, age, course)
+VALUES
+('Aarav Mehta', 'aarav.mehta@example.com', 22, 'Data Science'),
+('Isha Reddy', 'isha.reddy@example.com', 19, 'Web Development'),
+('Rohan Das', 'rohan.das@example.com', 24, 'Cybersecurity'),
+('Sneha Kapoor', 'sneha.kapoor@example.com', 21, 'UI/UX Design'),
+('Vikram Rao', 'vikram.rao@example.com', 20, 'Data Science'),
+('Neha Jain', 'neha.jain@example.com', 23, 'Web Development'),
+('Karan Verma', 'karan.verma@example.com', 18, 'Mobile App Dev');
+
+SELECT * FROM students1;
+
+| id | name         | email                    | age | course          | created_at                 |
+| -- | ------------ | ------------------------ | --- | --------------- | -------------------------- |
+| 1  | Aarav Mehta  | aarav.mehta@example.com  | 22  | Data Science    | 2026-01-22 11:26:05.598577 |
+| 2  | Isha Reddy   | isha.reddy@example.com   | 19  | Web Development | 2026-01-22 11:26:05.598577 |
+| 3  | Rohan Das    | rohan.das@example.com    | 24  | Cybersecurity   | 2026-01-22 11:26:05.598577 |
+| 4  | Sneha Kapoor | sneha.kapoor@example.com | 21  | UI/UX Design    | 2026-01-22 11:26:05.598577 |
+| 5  | Vikram Rao   | vikram.rao@example.com   | 20  | Data Science    | 2026-01-22 11:26:05.598577 |
+| 6  | Neha Jain    | neha.jain@example.com    | 23  | Web Development | 2026-01-22 11:26:05.598577 |
+| 7  | Karan Verma  | karan.verma@example.com  | 18  | Mobile App Dev  | 2026-01-22 11:26:05.598577 |
+
+SELECT * FROM students1 WHERE age > 20;
+
+| id | name         | email                    | age | course          | created_at                 |
+| -- | ------------ | ------------------------ | --- | --------------- | -------------------------- |
+| 1  | Aarav Mehta  | aarav.mehta@example.com  | 22  | Data Science    | 2026-01-22 11:26:05.598577 |
+| 3  | Rohan Das    | rohan.das@example.com    | 24  | Cybersecurity   | 2026-01-22 11:26:05.598577 |
+| 4  | Sneha Kapoor | sneha.kapoor@example.com | 21  | UI/UX Design    | 2026-01-22 11:26:05.598577 |
+| 6  | Neha Jain    | neha.jain@example.com    | 23  | Web Development | 2026-01-22 11:26:05.598577 |
+
+SELECT name, email FROM students1;
+
+| name         | email                    |
+| ------------ | ------------------------ |
+| Aarav Mehta  | aarav.mehta@example.com  |
+| Isha Reddy   | isha.reddy@example.com   |
+| Rohan Das    | rohan.das@example.com    |
+| Sneha Kapoor | sneha.kapoor@example.com |
+| Vikram Rao   | vikram.rao@example.com   |
+| Neha Jain    | neha.jain@example.com    |
+| Karan Verma  | karan.verma@example.com  |
+
+SELECT * FROM students1 WHERE course = 'Data Science';
+
+| id | name        | email                   | age | course       | created_at                 |
+| -- | ----------- | ----------------------- | --- | ------------ | -------------------------- |
+| 1  | Aarav Mehta | aarav.mehta@example.com | 22  | Data Science | 2026-01-22 11:26:05.598577 |
+| 5  | Vikram Rao  | vikram.rao@example.com  | 20  | Data Science | 2026-01-22 11:26:05.598577 |
+
+UPDATE students1 SET age = 23 WHERE name = 'Aarav Mehta';
+
+| id | name         | email                    | age | course          | created_at                 |
+| -- | ------------ | ------------------------ | --- | --------------- | -------------------------- |
+| 2  | Isha Reddy   | isha.reddy@example.com   | 19  | Web Development | 2026-01-22 11:26:05.598577 |
+| 3  | Rohan Das    | rohan.das@example.com    | 24  | Cybersecurity   | 2026-01-22 11:26:05.598577 |
+| 4  | Sneha Kapoor | sneha.kapoor@example.com | 21  | UI/UX Design    | 2026-01-22 11:26:05.598577 |
+| 5  | Vikram Rao   | vikram.rao@example.com   | 20  | Data Science    | 2026-01-22 11:26:05.598577 |
+| 6  | Neha Jain    | neha.jain@example.com    | 23  | Web Development | 2026-01-22 11:26:05.598577 |
+| 7  | Karan Verma  | karan.verma@example.com  | 18  | Mobile App Dev  | 2026-01-22 11:26:05.598577 |
+| 1  | Aarav Mehta  | aarav.mehta@example.com  | 23  | Data Science    | 2026-01-22 11:26:05.598577 |
+
+UPDATE students1 SET course = 'Full Stack Development' WHERE course = 'Web Development';
+
+| id | name         | email                    | age | course                 | created_at                 |
+| -- | ------------ | ------------------------ | --- | ---------------------- | -------------------------- |
+| 3  | Rohan Das    | rohan.das@example.com    | 24  | Cybersecurity          | 2026-01-22 11:26:05.598577 |
+| 4  | Sneha Kapoor | sneha.kapoor@example.com | 21  | UI/UX Design           | 2026-01-22 11:26:05.598577 |
+| 5  | Vikram Rao   | vikram.rao@example.com   | 20  | Data Science           | 2026-01-22 11:26:05.598577 |
+| 7  | Karan Verma  | karan.verma@example.com  | 18  | Mobile App Dev         | 2026-01-22 11:26:05.598577 |
+| 1  | Aarav Mehta  | aarav.mehta@example.com  | 23  | Data Science           | 2026-01-22 11:26:05.598577 |
+| 2  | Isha Reddy   | isha.reddy@example.com   | 19  | Full Stack Development | 2026-01-22 11:26:05.598577 |
+| 6  | Neha Jain    | neha.jain@example.com    | 23  | Full Stack Development | 2026-01-22 11:26:05.598577 |
+
+DELETE FROM students1 WHERE id = 7;
+
+| name         | email                    |
+| ------------ | ------------------------ |
+| Rohan Das    | rohan.das@example.com    |
+| Sneha Kapoor | sneha.kapoor@example.com |
+| Vikram Rao   | vikram.rao@example.com   |
+| Aarav Mehta  | aarav.mehta@example.com  |
+| Isha Reddy   | isha.reddy@example.com   |
+| Neha Jain    | neha.jain@example.com    |
+
+
+DELETE FROM students1 WHERE age < 20;
+
+| id | name         | email                    | age | course                 | created_at                 |
+| -- | ------------ | ------------------------ | --- | ---------------------- | -------------------------- |
+| 3  | Rohan Das    | rohan.das@example.com    | 24  | Cybersecurity          | 2026-01-22 11:26:05.598577 |
+| 4  | Sneha Kapoor | sneha.kapoor@example.com | 21  | UI/UX Design           | 2026-01-22 11:26:05.598577 |
+| 5  | Vikram Rao   | vikram.rao@example.com   | 20  | Data Science           | 2026-01-22 11:26:05.598577 |
+| 1  | Aarav Mehta  | aarav.mehta@example.com  | 23  | Data Science           | 2026-01-22 11:26:05.598577 |
+| 6  | Neha Jain    | neha.jain@example.com    | 23  | Full Stack Development | 2026-01-22 11:26:05.598577 |
