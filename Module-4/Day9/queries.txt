@@ -1,14 +1,8 @@
-CREATE TABLE students1 (
-  id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL,
-  email TEXT UNIQUE NOT NULL,
-  age INTEGER,
-  course TEXT,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE students1 (id SERIAL PRIMARY KEY, name TEXT NOT NULL, mail TEXT UNIQUE NOT NULL, age INTEGER,course TEXT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO students1 (name, email, age, course)
-VALUES
+INSERT INTO students1 (name, email, age, course) VALUES
 ('Aarav Mehta', 'aarav.mehta@example.com', 22, 'Data Science'),
 ('Isha Reddy', 'isha.reddy@example.com', 19, 'Web Development'),
 ('Rohan Das', 'rohan.das@example.com', 24, 'Cybersecurity'),
@@ -91,7 +85,6 @@ DELETE FROM students1 WHERE id = 7;
 | Aarav Mehta  | aarav.mehta@example.com  |
 | Isha Reddy   | isha.reddy@example.com   |
 | Neha Jain    | neha.jain@example.com    |
-
 
 DELETE FROM students1 WHERE age < 20;
 
