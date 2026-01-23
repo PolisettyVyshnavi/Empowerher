@@ -1,0 +1,118 @@
+SELECT COUNT(*) AS total_students FROM students1;
+
+| total_students |
+| -------------- |
+| 5              |
+
+SELECT AVG(age) AS average_age FROM students1;
+
+| average_age         |
+| ------------------- |
+| 22.2000000000000000 |
+
+SELECT MIN(age) AS min_age, MAX(age) AS max_age FROM students1;
+
+| min_age | max_age |
+| ------- | ------- |
+| 20      | 24      |
+
+SELECT course, COUNT(*) AS student_count
+FROM students1
+GROUP BY course;
+
+| course                 | student_count |
+| ---------------------- | ------------- |
+| Cybersecurity          | 1             |
+| Data Science           | 2             |
+| Full Stack Development | 1             |
+| UI/UX Design           | 1             |
+
+
+SELECT COUNT(*) AS count_above_20
+FROM students1
+WHERE age > 20;
+
+| count_above_20 |
+| -------------- |
+| 4              |
+
+SELECT course, COUNT(*) AS student_count
+FROM students1
+GROUP BY course;
+
+| course                 | student_count |
+| ---------------------- | ------------- |
+| Cybersecurity          | 1             |
+| Data Science           | 2             |
+| Full Stack Development | 1             |
+| UI/UX Design           | 1             |
+
+SELECT course, COUNT(*) AS student_count
+FROM students1
+GROUP BY course
+HAVING COUNT(*) > 1;
+
+| course       | student_count |
+| ------------ | ------------- |
+| Data Science | 2             |
+
+SELECT course, COUNT(*) AS student_count
+FROM students1
+GROUP BY course
+ORDER BY student_count DESC;
+
+
+| course                 | student_count |
+| ---------------------- | ------------- |
+| Data Science           | 2             |
+| Cybersecurity          | 1             |
+| Full Stack Development | 1             |
+| UI/UX Design           | 1             |
+
+SELECT course, COUNT(*) AS student_count
+FROM students1
+GROUP BY course
+ORDER BY student_count DESC;
+
+| course                 | student_count |
+| ---------------------- | ------------- |
+| Data Science           | 2             |
+| Cybersecurity          | 1             |
+| Full Stack Development | 1             |
+| UI/UX Design           | 1             |
+
+SELECT *
+FROM students1
+ORDER BY created_at DESC
+LIMIT 3;
+
+| course                 | student_count |
+| ---------------------- | ------------- |
+| Data Science           | 2             |
+| Cybersecurity          | 1             |
+| Full Stack Development | 1             |
+| UI/UX Design           | 1             |
+
+SELECT *
+FROM students1
+ORDER BY age DESC
+LIMIT 5;
+
+| course                 | student_count |
+| ---------------------- | ------------- |
+| Data Science           | 2             |
+| Cybersecurity          | 1             |
+| Full Stack Development | 1             |
+| UI/UX Design           | 1             |
+
+SELECT *
+FROM students1
+WHERE course = 'Data Science'
+ORDER BY age DESC;
+
+| course                 | student_count |
+| ---------------------- | ------------- |
+| Data Science           | 2             |
+| Cybersecurity          | 1             |
+| Full Stack Development | 1             |
+| UI/UX Design           | 1             |
