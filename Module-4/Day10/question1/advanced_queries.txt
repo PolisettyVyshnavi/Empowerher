@@ -108,7 +108,7 @@ LIMIT 5;
 SELECT *
 FROM students1
 WHERE course = 'Data Science'
-ORDER BY age DESC;
+ORDER by age desc;
 
 | course                 | student_count |
 | ---------------------- | ------------- |
