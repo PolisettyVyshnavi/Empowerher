@@ -17,7 +17,7 @@ There are three main types of database relationships:
 
 One-to-One (1:1)
 One-to-Many (1:M)
-Many-to-Many (M:N)
+Many-to-Many  (M:N)
 
 3. One-to-One Relationship (1:1)
 Definition
