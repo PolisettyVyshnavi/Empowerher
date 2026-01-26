@@ -1,0 +1,187 @@
+-- Step 1: Create users table first
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Step 2: Create orders table referencing users(id)
+CREATE TABLE orders (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    amount INTEGER NOT NULL,
+    status TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Insert 5 users
+INSERT INTO users (name, email) VALUES
+('Alice', 'alice@example.com'),
+('Bob', 'bob@example.com'),
+('Charlie', 'charlie@example.com'),
+('Diana', 'diana@example.com'),
+('Ethan', 'ethan@example.com');
+
+-- Insert 8–10 orders
+INSERT INTO orders (user_id, amount, status) VALUES
+(1, 200, 'Pending'),
+(1, 150, 'Completed'),
+(2, 300, 'Pending'),
+(3, 500, 'Completed'),
+(3, 250, 'Pending'),
+(4, 400, 'Completed'),
+(5, 100, 'Pending'),
+(5, 350, 'Completed'),
+(5, 200, 'Pending'),
+(2, 450, 'Completed');
+
+-- Fetch all users
+SELECT * FROM users;
+
+| id | name    | email               | created_at                 |
+| -- | ------- | ------------------- | -------------------------- |
+| 1  | Alice   | alice@example.com   | 2026-01-26 07:35:50.139335 |
+| 2  | Bob     | bob@example.com     | 2026-01-26 07:35:50.139335 |
+| 3  | Charlie | charlie@example.com | 2026-01-26 07:35:50.139335 |
+| 4  | Diana   | diana@example.com   | 2026-01-26 07:35:50.139335 |
+| 5  | Ethan   | ethan@example.com   | 2026-01-26 07:35:50.139335 |
+
+-- Fetch all orders
+SELECT * FROM orders;
+
+| id | user_id | amount | status    | created_at                 |
+| -- | ------- | ------ | --------- | -------------------------- |
+| 1  | 1       | 200    | Pending   | 2026-01-26 07:35:50.139335 |
+| 2  | 1       | 150    | Completed | 2026-01-26 07:35:50.139335 |
+| 3  | 2       | 300    | Pending   | 2026-01-26 07:35:50.139335 |
+| 4  | 3       | 500    | Completed | 2026-01-26 07:35:50.139335 |
+| 5  | 3       | 250    | Pending   | 2026-01-26 07:35:50.139335 |
+| 6  | 4       | 400    | Completed | 2026-01-26 07:35:50.139335 |
+| 7  | 5       | 100    | Pending   | 2026-01-26 07:35:50.139335 |
+| 8  | 5       | 350    | Completed | 2026-01-26 07:35:50.139335 |
+| 9  | 5       | 200    | Pending   | 2026-01-26 07:35:50.139335 |
+| 10 | 2       | 450    | Completed | 2026-01-26 07:35:50.139335 |
+
+
+-- Fetch all orders for a specific user (e.g., user_id = 1)
+SELECT * FROM orders WHERE user_id = 1;
+
+| id | user_id | amount | status    | created_at                 |
+| -- | ------- | ------ | --------- | -------------------------- |
+| 1  | 1       | 200    | Pending   | 2026-01-26 07:35:50.139335 |
+| 2  | 1       | 150    | Completed | 2026-01-26 07:35:50.139335 |
+
+-- Fetch users who have more than one order
+SELECT u.id, u.name, COUNT(o.id) AS order_count
+FROM users u
+JOIN orders o ON u.id = o.user_id
+GROUP BY u.id, u.name
+HAVING COUNT(o.id) > 1;
+
+| id | name    | order_count |
+| -- | ------- | ----------- |
+| 2  | Bob     | 2           |
+| 3  | Charlie | 2           |
+| 5  | Ethan   | 3           |
+| 1  | Alice   | 2           |
+
+-- Fetch total order amount per user
+SELECT u.id, u.name, SUM(o.amount) AS total_amount
+FROM users u
+JOIN orders o ON u.id = o.user_id
+GROUP BY u.id, u.name;
+
+| id | name    | total_amount |
+| -- | ------- | ------------ |
+| 4  | Diana   | 400          |
+| 2  | Bob     | 750          |
+| 3  | Charlie | 750          |
+| 5  | Ethan   | 650          |
+| 1  | Alice   | 350          |
+
+-- Update the email of one user (e.g., Bob)
+UPDATE users SET email = 'bob.new@example.com' WHERE id = 2;
+
+| id | name    | email               | created_at                 |
+| -- | ------- | ------------------- | -------------------------- |
+| 1  | Alice   | alice@example.com   | 2026-01-26 07:35:50.139335 |
+| 3  | Charlie | charlie@example.com | 2026-01-26 07:35:50.139335 |
+| 4  | Diana   | diana@example.com   | 2026-01-26 07:35:50.139335 |
+| 5  | Ethan   | ethan@example.com   | 2026-01-26 07:35:50.139335 |
+| 2  | Bob     | bob.new@example.com | 2026-01-26 07:35:50.139335 |
+
+-- Update the status of all orders for a specific user (e.g., user_id = 5)
+UPDATE orders SET status = 'Shipped' WHERE user_id = 5;
+
+| id | user_id | amount | status    | created_at                 |
+| -- | ------- | ------ | --------- | -------------------------- |
+| 1  | 1       | 200    | Pending   | 2026-01-26 07:35:50.139335 |
+| 2  | 1       | 150    | Completed | 2026-01-26 07:35:50.139335 |
+| 3  | 2       | 300    | Pending   | 2026-01-26 07:35:50.139335 |
+| 4  | 3       | 500    | Completed | 2026-01-26 07:35:50.139335 |
+| 5  | 3       | 250    | Pending   | 2026-01-26 07:35:50.139335 |
+| 6  | 4       | 400    | Completed | 2026-01-26 07:35:50.139335 |
+| 10 | 2       | 450    | Completed | 2026-01-26 07:35:50.139335 |
+| 7  | 5       | 100    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 8  | 5       | 350    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 9  | 5       | 200    | Shipped   | 2026-01-26 07:35:50.139335 |
+
+-- Update order amount for a single order (e.g., order_id = 3)
+UPDATE orders SET amount = 350 WHERE id = 3;
+
+| id | user_id | amount | status    | created_at                 |
+| -- | ------- | ------ | --------- | -------------------------- |
+| 1  | 1       | 200    | Pending   | 2026-01-26 07:35:50.139335 |
+| 2  | 1       | 150    | Completed | 2026-01-26 07:35:50.139335 |
+| 4  | 3       | 500    | Completed | 2026-01-26 07:35:50.139335 |
+| 5  | 3       | 250    | Pending   | 2026-01-26 07:35:50.139335 |
+| 6  | 4       | 400    | Completed | 2026-01-26 07:35:50.139335 |
+| 10 | 2       | 450    | Completed | 2026-01-26 07:35:50.139335 |
+| 7  | 5       | 100    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 8  | 5       | 350    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 9  | 5       | 200    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 3  | 2       | 350    | Pending   | 2026-01-26 07:35:50.139335 |
+-- Delete one order using order id (e.g., order_id = 2)
+DELETE FROM orders WHERE id = 2;
+
+| id | user_id | amount | status    | created_at                 |
+| -- | ------- | ------ | --------- | -------------------------- |
+| 1  | 1       | 200    | Pending   | 2026-01-26 07:35:50.139335 |
+| 4  | 3       | 500    | Completed | 2026-01-26 07:35:50.139335 |
+| 5  | 3       | 250    | Pending   | 2026-01-26 07:35:50.139335 |
+| 6  | 4       | 400    | Completed | 2026-01-26 07:35:50.139335 |
+| 10 | 2       | 450    | Completed | 2026-01-26 07:35:50.139335 |
+| 7  | 5       | 100    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 8  | 5       | 350    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 9  | 5       | 200    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 3  | 2       | 350    | Pending   | 2026-01-26 07:35:50.139335 |
+
+-- Delete all orders of a specific user (e.g., user_id = 3)
+DELETE FROM orders WHERE user_id = 3;
+
+| id | user_id | amount | status    | created_at                 |
+| -- | ------- | ------ | --------- | -------------------------- |
+| 1  | 1       | 200    | Pending   | 2026-01-26 07:35:50.139335 |
+| 6  | 4       | 400    | Completed | 2026-01-26 07:35:50.139335 |
+| 10 | 2       | 450    | Completed | 2026-01-26 07:35:50.139335 |
+| 7  | 5       | 100    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 8  | 5       | 350    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 9  | 5       | 200    | Shipped   | 2026-01-26 07:35:50.139335 |
+| 3  | 2       | 350    | Pending   | 2026-01-26 07:35:50.139335 |
+
+-- Attempt deleting a user with existing orders (e.g., user_id = 1)
+DELETE FROM users WHERE id = 1;
+
+| id | name    | email               | created_at                 |
+| -- | ------- | ------------------- | -------------------------- |
+| 3  | Charlie | charlie@example.com | 2026-01-26 07:35:50.139335 |
+| 4  | Diana   | diana@example.com   | 2026-01-26 07:35:50.139335 |
+| 5  | Ethan   | ethan@example.com   | 2026-01-26 07:35:50.139335 |
+| 2  | Bob     | bob.new@example.com | 2026-01-26 07:35:50.139335 |
+
+-- Why should orders not be stored inside the users table?
+-- Because orders are a separate entity with a one-to-many relationship to users.
+-- Storing them inside users would break normalization, cause duplication,
+-- and make queries inefficient. Proper relational design keeps them separate.
