@@ -8,7 +8,6 @@ export async function signup(req, res) {
     res.status(400).json({ error: error.message });
   }
 }
-
 export async function deleteUser(req, res) {
   try {
     const result = await deleteUserService(req.params.id);
