@@ -8,7 +8,6 @@ export async function addTodo(req, res) {
     res.status(400).json({ error: error.message });
   }
 }
-
 export async function getUserTodos(req, res) {
   try {
     const todos = await getUserTodosService(req.params.userId);
@@ -17,7 +16,6 @@ export async function getUserTodos(req, res) {
     res.status(404).json({ error: error.message });
   }
 }
-
 export async function updateTodo(req, res) {
   try {
     const todo = await updateTodoService(req.params.todoId, req.body);
@@ -26,7 +24,6 @@ export async function updateTodo(req, res) {
     res.status(400).json({ error: error.message });
   }
 }
-
 export async function deleteTodo(req, res) {
   try {
     const result = await deleteTodoService(req.params.todoId);
