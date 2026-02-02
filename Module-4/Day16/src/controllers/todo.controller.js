@@ -1,6 +1,5 @@
 import supabase from '../config/supabase.js';
 
-// 🔐 Create Todo
 export async function createTodo(req, res) {
   try {
     const { title } = req.body;
@@ -17,14 +16,12 @@ export async function createTodo(req, res) {
     res.status(500).json({ error: err.message });
   }
 }
-
-// 📥 Get Todos
 export async function getTodos(req, res) {
   try {
     const { data, error } = await supabase
       .from('todos')
       .select('*')
-      .eq('user_id', req.user.userId);   // use user_id
+      .eq('user_id', req.user.userId);  
 
     if (error) throw error;
     res.json(data);
@@ -32,14 +29,10 @@ export async function getTodos(req, res) {
     res.status(500).json({ error: err.message });
   }
 }
-
-// ✏️ Update Todo
 export async function updateTodo(req, res) {
   try {
     const { id } = req.params;
     const { title, completed } = req.body;
-
-    // Ensure ownership
     const { data: todo } = await supabase
       .from('todos')
       .select('*')
@@ -63,7 +56,6 @@ export async function updateTodo(req, res) {
   }
 }
 
-// ❌ Delete Todo
 export async function deleteTodo(req, res) {
   try {
     const { id } = req.params;
