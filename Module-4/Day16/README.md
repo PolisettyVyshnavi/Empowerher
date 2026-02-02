@@ -89,9 +89,9 @@ create table todos (
 
 npm install
 
-SUPABASE_URL=your-supabase-url
-SUPABASE_KEY=your-service-role-key
-JWT_SECRET=your-secret-key
+SUPABASE_URL=https://gcllmnzbfwgyfssvqdbz.supabase.co
+SUPABASE_KEY=sb_publishable_qXEvlnqmomgPDmYahd2m-Q_6OD2a_Vn
+JWT_SECRET=9f8a7c6d5e4b3a2c1d0flughuto56873
 PORT=5000
 
 node src/server.js
@@ -130,3 +130,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNjI0Z
 {
   "title": "Finish project"
 }
+
+---
+
+This README gives you a **ready-to-use documentation file**. You can copy it into your project root as `README.md`.  
+
+Would you like me to also generate the `.env.example` file content so your repo is complete and easy for others to run.
