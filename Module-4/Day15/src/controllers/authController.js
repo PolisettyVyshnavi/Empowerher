@@ -12,7 +12,6 @@ export async function signup(req, res) {
       .select('id')
       .eq('email', email)
       .single();
-
     if (existingUser) {
       return res.status(400).json({ error: "Email already registered" });
     }
